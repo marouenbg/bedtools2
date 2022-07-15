@@ -27,7 +27,7 @@ PYTHON ?= $(shell python --version >/dev/null 2>&1 && echo "python" || echo pyth
 
 ifeq ($(DEBUG),1)
 BT_CPPFLAGS = -DDEBUG -D_DEBUG -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
-BT_CXXFLAGS = -Wconversion -Wall -Wextra -g -O0
+BT_CXXFLAGS = -Wconversion -Wall -Wextra -g -O0 -ferror-limit=0
 else
 BT_CPPFLAGS = -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
 BT_CXXFLAGS = -g -Wall -O2
